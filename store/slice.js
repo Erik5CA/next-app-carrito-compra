@@ -7,13 +7,15 @@ export const origenSlice = createSlice({
     miCarrito: [],
   },
   reducers: {
-    guardarCategoria: (state, action) => {},
+    guardarCategoria: (state, action) => {
+      state.categoria = action.payload;
+    },
     agregarAlCarrito: (state, action) => {
       state.miCarrito = [...state.miCarrito, action.payload];
     },
     eliminarDelCarrito: (state, action) => {
       state.miCarrito = state.miCarrito.filter(
-        (producto) => producto.id !== action.payload
+        (producto) => producto.producto !== action.payload.producto
       );
     },
   },

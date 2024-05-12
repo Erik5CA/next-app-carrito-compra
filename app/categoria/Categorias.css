@@ -14,6 +14,10 @@
   cursor: pointer;
 }
 
+.categorias {
+  margin: 15px 0;
+}
+
 .categoria {
   color: white;
   background-color: #323232;

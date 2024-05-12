@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import estilos from "./Carrito.module.css";
 import { useMemo, useState } from "react";
 import { eliminarDelCarrito } from "@/store/slice";
+import Image from "next/image";
 
 const Carrito = () => {
   const [total, setTotal] = useState(0);
@@ -22,18 +23,36 @@ const Carrito = () => {
     dispatch(eliminarDelCarrito(id));
   };
 
+  const cargador = ({ src, width }) => {
+    return `${src}?w=${width}`;
+  };
+
   return (
     <>
-      <div>{total}</div>
+      <div className={estilos.caja}>
+        <Image
+          src={"/images/carrito.png"}
+          alt="icono carrito"
+          width={50}
+          height={50}
+        />
+        <div className={estilos.total}>Total: ${total.toFixed(2)}</div>
+      </div>
       <div className={estilos.carrito}>
         {carrito.length > 0 ? (
           carrito?.map((valor, indice) => (
-            <div key={indice}>
-              <img
-                onClick={() => eliminar(valor.producto)}
+            <div
+              className={estilos.producto}
+              key={indice}
+              title="Remover del carrito"
+              onClick={() => eliminar(valor)}
+            >
+              <Image
+                loader={cargador}
                 src={valor.imagen}
                 alt=""
                 height={60}
+                width={70}
               />
             </div>
           ))

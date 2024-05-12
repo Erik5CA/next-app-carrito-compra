@@ -1,0 +1,47 @@
+.ficha {
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted black;
+  padding: 30px;
+  border-radius: 8px;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.precio {
+  align-self: flex-end;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.descripcion {
+  border: 1px dotted black;
+  border-radius: 8px;
+  padding: 8px;
+  align-items: center;
+}
+
+.categoria {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.imagen {
+  align-self: center;
+}
+
+.acciones {
+  display: flex;
+  gap: 5px;
+  align-self: center;
+}
+
+.boton {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  border-radius: 5px;
+  cursor: pointer;
+}

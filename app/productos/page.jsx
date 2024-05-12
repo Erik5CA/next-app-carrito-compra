@@ -14,6 +14,12 @@ const page = async () => {
   const datos = await cargarDatos();
   return (
     <>
+      <div className={estilos.header}>
+        <h2>Todos los productos:</h2>
+        <Link href={"/"}>
+          <button className={estilos.boton}>Volver</button>
+        </Link>
+      </div>
       <div className={estilos.productos}>
         {datos?.map((valor, indice) => (
           <Ficha key={indice} valor={valor} />
